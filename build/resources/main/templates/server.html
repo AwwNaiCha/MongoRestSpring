@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>test</title>
+</head>
+<body>
+
+
+<p><h2>Client List</h2></p>
+
+<table>
+    <tr>
+        <form action="#" th:action="@{/server}" th:object="${client}" method="post">
+        <td><button type="submit" name="action" value="create">Create Server</button></td>
+        </form>
+    </tr>
+    <tr>
+        <td>Object ID</td>
+        <td>Object Name</td>
+    </tr>
+    <tr th:each="c : ${client}">
+        <td th:text="${c.objectId}"></td>
+        <td th:text="${c.objectName}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>

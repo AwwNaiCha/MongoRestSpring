@@ -84,7 +84,7 @@ public class Server {
         return disable;
     }
 
-    public void setDiable(ResourceInfo disable) {
+    public void setDisable(ResourceInfo disable) {
         disable.setResourceId("4");
         disable.setResourceName("Disable");
         this.disable = disable;

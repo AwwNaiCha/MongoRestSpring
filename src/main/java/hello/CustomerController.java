@@ -22,6 +22,9 @@ public class CustomerController {
     @Autowired
     ClientRepo clientRepo;
 
+    @Autowired
+    ServerRepo serverRepo;
+
     @RequestMapping(value="/boot", method = RequestMethod.GET)
     public ModelAndView startBoot() {
         ModelAndView mav = new ModelAndView("boot");
@@ -153,6 +156,37 @@ public class CustomerController {
         RedirectView redirect = new RedirectView("/register");
         redirect.setExposeModelAttributes(false);
         return redirect;
+    }
+
+    @RequestMapping(value = {"/server"}, method = RequestMethod.GET)
+    public String showServer(Model model){
+        model.addAttribute("client", clientRepo.findAll());
+        return "server";
+    }
+
+    @RequestMapping(value="/server", method = RequestMethod.POST)
+    public ModelAndView createServer(final RedirectAttributes redirectAttributes) {
+        ModelAndView mav = new ModelAndView("redirect:/server/create");
+        return mav;
+    }
+
+    @RequestMapping(value="/server/create", method = RequestMethod.GET)
+    public ModelAndView emptyServer() {
+        Server server = new Server();
+        ModelAndView mav = new ModelAndView("createserver");
+        mav.addObject("server",server);
+        return mav;
+    }
+
+    @RequestMapping(value="/server/create", method = RequestMethod.POST)
+    public ModelAndView createServer(@ModelAttribute Server server, final RedirectAttributes redirectAttributes) {
+        if(server.getObjectId() == null || server.getObjectId().equals("")) {
+            ModelAndView mav = new ModelAndView("redirect:/server/create");
+            return mav;
+        }
+        ModelAndView mav = new ModelAndView("redirect:/server");
+        serverRepo.save(server);
+        return mav;
     }
 
 }

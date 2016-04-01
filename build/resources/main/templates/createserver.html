@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>test</title>
+</head>
+<body>
+
+<p><h2>Create Server</h2></p>
+
+<form action="#" th:action="@{/server/create}" th:object="${server}" method="post">
+    <table>
+
+        <tr>
+            <td>Object ID:</td>
+            <td><input type="text" th:field="*{objectId}" /></td>
+        </tr>
+
+        <tr>
+            <td>Resource 0</td>
+            <td>Short Server ID</td>
+            <td><input type="text" th:field="*{shortId.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 1</td>
+            <td>Lifetime</td>
+            <td><input type="text" th:field="*{lifetime.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 2</td>
+            <td>Default Minimum Period</td>
+            <td><input type="text" th:field="*{defaultMinPeriod.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 3</td>
+            <td>Default Maximum Period</td>
+            <td><input type="text" th:field="*{defaultMaxPeriod.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 4</td>
+            <td>Disable</td>
+            <td><input type="text" th:field="*{disable.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 5</td>
+            <td>Disable Timeout</td>
+            <td><input type="text" th:field="*{disableTimeout.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 6</td>
+            <td>Notification Storing When Disabled or Offline</td>
+            <td><input type="text" th:field="*{notificationStoringWhenDiabledOrOffiline.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 7</td>
+            <td>Binding</td>
+            <td><input type="text" th:field="*{binding.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 8</td>
+            <td>Registration Update Trigger</td>
+            <td><input type="text" th:field="*{registrationUpdateTrigger.value}" /></td>
+        </tr>
+
+
+        <tr>
+            <td><button type="submit" name="action" value="create">Create</button></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
