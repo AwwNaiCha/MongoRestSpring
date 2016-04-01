@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>test</title>
+</head>
+<body>
+
+<p><h2>Client Detail</h2></p>
+
+<form action="#" th:action="@{/client/{objectId}(objectId=${client.objectId})}" th:object="${client}" method="post">
+    <table>
+        <tr>
+            <td>Object ID:</td>
+            <td><span th:text="${client.objectId}"></span></td>
+        </tr>
+        <tr>
+            <td>Object Name:</td>
+            <td><input type="text" th:field="*{objectName}" /></td>
+        </tr>
+
+
+        <tr>
+            <td>Resource 0</td>
+            <td>Manufacturer</td>
+            <td><input type="text" th:field="*{manufacturer.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 17</td>
+            <td>Device Type</td>
+            <td><input type="text" th:field="*{deviceType.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 1</td>
+            <td>Model Number</td>
+            <td><input type="text" th:field="*{modelNumber.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 2</td>
+            <td>Serial Number</td>
+            <td><input type="text" th:field="*{serialNumber.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 18</td>
+            <td>Hardware Version</td>
+            <td><input type="text" th:field="*{hardwareVersion.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 3</td>
+            <td>Firmware Version</td>
+            <td><input type="text" th:field="*{firmwareVersion.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 19</td>
+            <td>Software Version</td>
+            <td><input type="text" th:field="*{softwareVersion.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 4</td>
+            <td>Reboot</td>
+            <td><input type="text" th:field="*{reboot.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 5</td>
+            <td>Factory Reset</td>
+            <td><input type="text" th:field="*{factoryReset.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 6</td>
+            <td>Available Power Source</td>
+            <td><input type="text" th:field="*{availPowerSource.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 7</td>
+            <td>Power Source Voltage</td>
+            <td><input type="text" th:field="*{powerSourceVoltage.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 8</td>
+            <td>Power Source Current</td>
+            <td><input type="text" th:field="*{powerSourceCurrent.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 9</td>
+            <td>Battery Level</td>
+            <td><input type="text" th:field="*{batteryLevel.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 20</td>
+            <td>Battery Status</td>
+            <td><input type="text" th:field="*{batteryStatus.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 10</td>
+            <td>Memory Free</td>
+            <td><input type="text" th:field="*{memoryFree.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 21</td>
+            <td>Memory Total</td>
+            <td><input type="text" th:field="*{memoryTotal.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 11</td>
+            <td>Error Code</td>
+            <td><input type="text" th:field="*{errorCode.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 12</td>
+            <td>Reset Error Code</td>
+            <td><input type="text" th:field="*{resetErrorCode.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 13</td>
+            <td>Current Time</td>
+            <td><input type="text" th:field="*{currentTime.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 14</td>
+            <td>UTC Offset</td>
+            <td><input type="text" th:field="*{utcOffset.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 15</td>
+            <td>Timezone</td>
+            <td><input type="text" th:field="*{timezone.value}" /></td>
+        </tr>
+        <tr>
+            <td>Resource 16</td>
+            <td>Supported Binding and Modes</td>
+            <td><input type="text" th:field="*{supportBindingAndModes.value}" /></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit" name="action" value="update">Update</button></td>
+            <td><button type="submit" name="action" value="delete">Delete</button></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
